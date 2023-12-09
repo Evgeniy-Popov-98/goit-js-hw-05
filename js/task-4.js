@@ -1,13 +1,15 @@
+'use strict';
+
 const getTotalBalanceByGender = (users, gender) => {
   return users.reduce((totalSum, user) => {
-    if (user.friends.includes(gender)) {
+    if (user.gender === gender) {
       totalSum += user.balance;
     }
     return totalSum;
   }, 0);
 };
 
-const allUsers = [
+const allUsersNewArray = [
   {
     name: 'Moore Hensley',
     gender: 'male',
@@ -45,6 +47,6 @@ const allUsers = [
   },
 ];
 
-console.log(getTotalBalanceByGender(allUsers, 'male')); // 12053
+console.log(getTotalBalanceByGender(allUsersNewArray, 'male')); // 12053
 
-console.log(getTotalBalanceByGender(allUsers, 'female')); // 8863
+console.log(getTotalBalanceByGender(allUsersNewArray, 'female')); // 8863
